@@ -41,3 +41,8 @@ function gym_member_1589529766_activate() {
     dbDelta( $sql );
 }
 register_activation_hook( __FILE__, "gym_member_1589529766_activate" );
+
+require_once( 'BFIGitHubPluginUploader.php' );
+if ( is_admin() ) {
+    new BFIGitHubPluginUpdater( __FILE__, 'sufyan-sheikh', "hs-gym-members" );
+}
